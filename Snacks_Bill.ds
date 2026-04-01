@@ -1,0 +1,1515 @@
+/*
+ * Author       : manikandan_zentegra411
+ * Generated on : 23-Feb-2026 20:41:07
+ * Version      : 1.0
+ */
+ application "Snacks Bill"
+ {
+ 	date format = "dd-MMM-yyyy"
+ 	time zone = "Asia/Kolkata"
+ 	time format = "24-hr"
+ 	forms
+	{
+		form Snacks_Form
+		{
+			displayname = "Snacks Form"
+			success message = "Snack Added Successfully"
+			Section
+			(
+				type = section
+	 			row = 1
+	 			column = 0   
+				width = medium
+			)
+			Name
+			(
+    			type = name
+     			prefix
+     			(
+	     			 type = prefix
+	     			 displayname ="Prefix"
+	     			 visibility = false
+	     			 value = {"Mr.","Mrs.","Ms."}
+     			) 
+     			first_name
+     			(
+	     			 type = first_name
+	     			 displayname ="First Name"
+     			) 
+     			last_name
+     			(
+	     			 type = last_name
+	     			 displayname ="Last Name"
+     			) 
+     			suffix
+     			(
+	     			 type = suffix
+	     			 displayname ="Suffix"
+	     			 visibility = false
+     			) 
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Enter_your_email
+			(
+    			type = email
+				displayname = "Enter your email"
+				maxchar = 80
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Enter_your_phone_number
+			(
+    			type = phonenumber
+				displayname = "Enter your phone number"
+	 			row = 1
+	 			column = 1   
+				width = medium
+				personal data = true
+			)
+			Select_the_snacks_type
+			(
+				type = picklist
+				displayname = "Select the snacks type"
+				maxchar = 100
+				values = {"Veg","Non veg"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Indian_veg
+			(
+				type = picklist
+				displayname = "Indian veg "
+				maxchar = 100
+				values = {"Pani puri","Momos","Vadapav","Bhel puri","Rasa puri","Samosaa","Masala puri"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Veg_Puffs
+			(
+				type = picklist
+				displayname = "Veg puffs"
+				maxchar = 100
+				values = {"Onion puffs","Potato puffs"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Classic_Burger
+			(
+				type = picklist
+				displayname = "Classic Burger"
+				maxchar = 100
+				values = {"Cheese burger","Patty Burger","Aloo thikki burger","Low fat burger"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Cheese_based_veg_burgers
+			(
+				type = picklist
+				displayname = "Cheese based veg burgers "
+				maxchar = 100
+				values = {"Cheese veg burger","Double cheese veg burger","Cheese corn burger"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Paneer_burgers
+			(
+				type = picklist
+				displayname = "Paneer burgers"
+				maxchar = 100
+				values = {"Paneer burger","Paneer tikka burger","Crispy paneer burger"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Spicy_Burgers
+			(
+				type = picklist
+				displayname = "Spicy Burgers"
+				maxchar = 100
+				values = {"Mexican Veg Burger","Peri peri veg burger","Masala veg burger"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			French_burger
+			(
+				type = picklist
+				displayname = "French burger"
+				maxchar = 100
+				values = {"Spicy french fries","Cheese french fries","Peper french fries"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Veg_Pizza
+			(
+				type = picklist
+				displayname = "Veg Pizza"
+				maxchar = 100
+				values = {"Paneer pizza","Vegetable puffs","Cheese pizza","Plain pizza"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Indian_Non_veg
+			(
+				type = picklist
+				displayname = "Indian Non veg"
+				maxchar = 100
+				values = {"Chicken 65","Chicken Lollipop","Chilli chicken","Pepper chicken","Fish fry","Fish pakpoda","Prawn fry","Prawn pakoda","Crap lalipop"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Puffs1
+			(
+				type = picklist
+				displayname = "Puffs"
+				maxchar = 100
+				values = {"Egg puffs","Chicken puffs","Fish puffs","Mutton puffs"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Burger
+			(
+				type = picklist
+				maxchar = 100
+				values = {"Egg burger","Chicken burger","Mutton burger","Chicken cheese burger","Crispy chicken burger"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Pizza1
+			(
+				type = picklist
+				displayname = "Pizza"
+				maxchar = 100
+				values = {"Egg pizza","Chicken pizza","Crispy chicken pizza","Prawn pizza"}
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+			Price
+			(
+				type = INR
+				format = commadotindian
+	 			row = 1
+	 			column = 1   
+				width = medium
+			)
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+		form Veg
+		{
+			success message = "Veg Added Successfully"
+	
+			actions
+			{
+				on add
+				{
+					submit
+					(
+   						type = submit
+   						displayname = "Submit"
+					)
+				}
+				on edit
+				{
+					update
+					(
+   						type = submit
+   						displayname = "Update"
+					)
+					cancel
+					(
+   						type = cancel
+   						displayname = "Cancel"
+					)
+				}
+			}
+		}
+	}
+	reports
+	{
+		default list All_Snacks
+		{
+			displayName = "All Snacks"
+			show all rows from Snacks_Form    
+			(
+				Select_the_snacks_type as "Select the snacks type"
+				Classic_Burger as "Classic Burger"
+				Cheese_based_veg_burgers as "Cheese based veg burgers "
+				Paneer_burgers as "Paneer burgers"
+				Spicy_Burgers as "Spicy Burgers"
+				French_burger as "French burger"
+				Indian_veg as "Indian veg "
+				Veg_Puffs as "Veg puffs"
+				Veg_Pizza as "Veg Pizza"
+				Indian_Non_veg as "Indian Non veg"
+				Puffs1 as "Puffs"
+				Burger
+				Pizza1 as "Pizza"
+				Name 
+	 			(
+	      			displayformat = [first_name+""+prefix+""+last_name+""+suffix]
+	 			)
+				Enter_your_email as "Enter your email"
+				Enter_your_phone_number as "Enter your phone number"
+				(
+					displayformat = plainnumber 
+					linktodial = enable
+				)
+				Price
+			)
+		}
+		default list All_Veges
+		{
+			displayName = "All Veges"
+			show all rows from Veg    
+		}
+	}
+	pages
+	{
+		page Front_view
+		{
+			displayname = "Front view"
+			Content="<zml    \t\t\n\t\t\n\t\t\n\t\t\n\t\t\n>\n\t<layout>\n\t\n</layout>\n</zml>"
+		}
+	}
+
+
+		workflow
+		{
+		form
+		{
+			Load_form as "Load form"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											hide Indian_veg;
+										hide Veg_Puffs;
+										hide Classic_Burger;
+										hide Cheese_based_veg_burgers;
+										hide Paneer_burgers;
+										hide Spicy_Burgers;
+										hide French_burger;
+										hide Veg_Pizza;
+										hide Indian_Non_veg;
+										hide Puffs1;
+										hide Pizza1;
+										hide Burger;
+										disable Price;
+						)
+					}
+				}
+
+			}
+			New_load as "New load"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Select_the_snacks_type
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Select_the_snacks_type == "Veg")
+										{
+											show Indian_veg;
+											show Veg_Puffs;
+											show Classic_Burger;
+											show Cheese_based_veg_burgers;
+											show Paneer_burgers;
+											show Spicy_Burgers;
+											show French_burger;
+											show Veg_Pizza;
+										}
+										else if(Select_the_snacks_type == "Non veg")
+										{
+											show Indian_Non_veg;
+											show Puffs1;
+											show Burger;
+											show Pizza1;
+										}
+										else if(Select_the_snacks_type != "veg" || Select_the_snacks_type != "Non veg")
+										{
+											hide Indian_veg;
+											hide Veg_Puffs;
+											hide Classic_Burger;
+											hide Cheese_based_veg_burgers;
+											hide Paneer_burgers;
+											hide Spicy_Burgers;
+											hide French_burger;
+											hide Veg_Pizza;
+											hide Indian_Non_veg;
+											hide Puffs1;
+											hide Burger;
+											hide Pizza1;
+										}
+						)
+					}
+				}
+
+			}
+			Disable2 as "Disable2"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on load
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											disable Price;
+						)
+					}
+				}
+
+			}
+			Indian_veg as "Indian veg"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Indian_veg
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Indian_veg == "Pani puri")
+										{
+											input.Price = "35";
+										}
+										else if(Indian_veg == "Momos")
+										{
+											input.Price = "49";
+										}
+										else if(Indian_veg == "Vadapav")
+										{
+											input.Price = "39";
+										}
+										else if(Indian_veg == "Bhel puri")
+										{
+											input.Price = "39";
+										}
+										else if(Indian_veg == "Rasa puri")
+										{
+											input.Price = "49";
+										}
+										else if(Indian_veg == "Samosaa")
+										{
+											input.Price = "11";
+										}
+										else if(Indian_veg == "Masala puri")
+										{
+											input.Price = "35";
+										}
+						)
+					}
+				}
+
+			}
+			Bill1 as "Bill1"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on validate
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											// if(Indian_veg == "Pani puri")
+										// {
+										// 	input.Price = "35";
+										// }
+										// else if(Indian_veg == "Momos")
+										// {
+										// 	input.Price = "49";
+										// }
+										// else if(Indian_veg == "Vadapav")
+										// {
+										// 	input.Price = "39";
+										// }
+										// else if(Indian_veg == "Bhel puri")
+										// {
+										// 	input.Price = "39";
+										// }
+										// else if(Indian_veg == "Rasa puri")
+										// {
+										// 	input.Price = "49";
+										// }
+										// else if(Indian_veg == "Samosaa")
+										// {
+										// 	input.Price = "11";
+										// }
+										// else if(Indian_veg == "Masala puri")
+										// {
+										// 	input.Price = "35";
+										// }
+										// if(Puffs == "Onion puffs")
+										// {
+										// 	input.Price = "49";
+										// }
+										// else if(Puffs == "Potato puffs")
+										// {
+										// 	input.Price = "29";
+										// }
+										// else if(Classic_Burger == "Cheese burger")
+										// {
+										// 	input.Price = "99";
+										// }
+										// else if(Classic_Burger == "Patty Burger")
+										// {
+										// 	input.Price = "98";
+										// }
+										// else if(Classic_Burger == "Aloo thikki burger")
+										// {
+										// 	input.Price = "97";
+										// }
+										// else if(Classic_Burger == "Low fat burger")
+										// {
+										// 	input.Price = "69";
+										// }
+										// else if(Cheese_based_veg_burgers == "Cheese veg burger")
+										// {
+										// 	input.Price = "89";
+										// }
+										// else if(Cheese_based_veg_burgers == "Double cheese veg burger")
+										// {
+										// 	input.Price = "88";
+										// }
+										// else if(Cheese_based_veg_burgers == "Cheese corn burger")
+										// {
+										// 	input.Price = "84";
+										// }
+										// else if(Paneer_burgers == "Paneer burger")
+										// {
+										// 	input.Price = "199";
+										// }
+										// else if(Paneer_burgers == "Paneer tikka burger")
+										// {
+										// 	input.Price = "197";
+										// }
+										// else if(Paneer_burgers == "Crispy paneer burger")
+										// {
+										// 	input.Price = "199";
+										// }
+										// else if(Spicy_Burgers == "Mexican Veg Burger")
+										// {
+										// 	input.Price = "299";
+										// }
+										// else if(Spicy_Burgers == "Peri peri veg burger")
+										// {
+										// 	input.Price = "279";
+										// }
+										// else if(Spicy_Burgers == "Masala veg burger")
+										// {
+										// 	input.Price = "269";
+										// }
+										// else if(French_burger == "Spicy french fries")
+										// {
+										// 	input.Price = "249";
+										// }
+										// else if(French_burger == "Cheese french fries")
+										// {
+										// 	input.Price = "239";
+										// }
+										// else if(French_burger == "Peper french fries")
+										// {
+										// 	input.Price = "219";
+										// }
+										// else if(Pizza == "Paneer pizza")
+										// {
+										// 	input.Price = "199";
+										// }
+										// else if(Pizza == "Vegetable puffs")
+										// {
+										// 	input.Price = "179";
+										// }
+										// else if(Pizza == "Cheese pizza")
+										// {
+										// 	input.Price = "149";
+										// }
+										// else if(Pizza == "Plain pizza")
+										// {
+										// 	input.Price = "99";
+										// }
+										// else if(Indian_Non_veg == "Chicken 65")
+										// {
+										// 	input.Price = "69";
+										// }
+										// else if(Indian_Non_veg == "Chicken Lollipop")
+										// {
+										// 	input.Price = "99";
+										// }
+										// else if(Indian_Non_veg == "Chilli chicken")
+										// {
+										// 	input.Price = "199";
+										// }
+										// else if(Indian_Non_veg == "Pepper chicken")
+										// {
+										// 	input.Price = "198";
+										// }
+										// else if(Indian_Non_veg == "Fish fry")
+										// {
+										// 	input.Price = "89";
+										// }
+										// else if(Indian_Non_veg == "Fish pakpoda")
+										// {
+										// 	input.Price = "49";
+										// }
+										// else if(Indian_Non_veg == "Prawn fry")
+										// {
+										// 	input.Price = "49";
+										// }
+										// else if(Indian_Non_veg == "Prawn pakoda")
+										// {
+										// 	input.Price = "79";
+										// }
+										// else if(Indian_Non_veg == "Crap lalipop")
+										// {
+										// 	input.Price = "199";
+										// }
+										// else if(Puffs1 == "Egg puffs")
+										// {
+										// 	input.Price = "29";
+										// }
+										// else if(Puffs1 == "Chicken puffs")
+										// {
+										// 	input.Price = "39";
+										// }
+										// else if(Puffs1 == "Fish puffs")
+										// {
+										// 	input.Price = "49";
+										// }
+										// else if(Puffs1 == "Mutton puffs")
+										// {
+										// 	input.Price = "89";
+										// }
+										// else if(Burger == "Egg burger")
+										// {
+										// 	input.Price = "19";
+										// }
+										// else if(Burger == "Chicken burger")
+										// {
+										// 	input.Price = "29";
+										// }
+										// else if(Burger == "Mutton burger")
+										// {
+										// 	input.Price = "59";
+										// }
+										// else if(Burger == "Chicken cheese burger")
+										// {
+										// 	input.Price = "89";
+										// }
+										// else if(Burger == "Crispy chicken burger")
+										// {
+										// 	input.Price = "49";
+										// }
+										// else if(Pizza1 == "Egg pizza")
+										// {
+										// 	input.Price = "49";
+										// }
+										// else if(Pizza1 == "Chicken pizza")
+										// {
+										// 	input.Price = "99";
+										// }
+										// else if(Pizza1 == "Crispy chicken pizza")
+										// {
+										// 	input.Price = "99";
+										// }
+										// else if(Pizza1 == "Prawn pizza")
+										// {
+										// 	input.Price = "89";
+										// }
+						)
+					}
+				}
+
+			}
+			veg_puffs as "veg puffs"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Veg_Puffs
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Veg_Puffs == "Onion puffs")
+										{
+											input.Price = "49";
+										}
+										else if(Veg_Puffs == "Potato puffs")
+										{
+											input.Price = "29";
+										}
+						)
+					}
+				}
+
+			}
+			Veg_Burger as "Veg Burger"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Classic_Burger
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Classic_Burger == "Cheese burger")
+										{
+											input.Price = "99";
+										}
+										else if(Classic_Burger == "Patty Burger")
+										{
+											input.Price = "98";
+										}
+										else if(Classic_Burger == "Aloo thikki burger")
+										{
+											input.Price = "97";
+										}
+										else if(Classic_Burger == "Low fat burger")
+										{
+											input.Price = "69";
+										}
+						)
+					}
+				}
+
+			}
+			Cheese_based_veg_burger as "Cheese based veg burger"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Cheese_based_veg_burgers
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Cheese_based_veg_burgers == "Cheese veg burger")
+										{
+											input.Price = "89";
+										}
+										else if(Cheese_based_veg_burgers == "Double cheese veg burger")
+										{
+											input.Price = "88";
+										}
+										else if(Cheese_based_veg_burgers == "Cheese corn burger")
+										{
+											input.Price = "84";
+										}
+						)
+					}
+				}
+
+			}
+			Paneer_burgers as "Paneer burgers"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Paneer_burgers
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Paneer_burgers == "Paneer burger")
+										{
+											input.Price = "199";
+										}
+										else if(Paneer_burgers == "Paneer tikka burger")
+										{
+											input.Price = "197";
+										}
+										else if(Paneer_burgers == "Crispy paneer burger")
+										{
+											input.Price = "199";
+										}
+						)
+					}
+				}
+
+			}
+			spicy_burgers as "spicy burgers"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Spicy_Burgers
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Spicy_Burgers == "Mexican Veg Burger")
+										{
+											input.Price = "299";
+										}
+										else if(Spicy_Burgers == "Peri peri veg burger")
+										{
+											input.Price = "279";
+										}
+										else if(Spicy_Burgers == "Masala veg burger")
+										{
+											input.Price = "269";
+										}
+						)
+					}
+				}
+
+			}
+			fresnch_burger as "fresnch burger"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of French_burger
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(French_burger == "Spicy french fries")
+										{
+											input.Price = "249";
+										}
+										else if(French_burger == "Cheese french fries")
+										{
+											input.Price = "239";
+										}
+										else if(French_burger == "Peper french fries")
+										{
+											input.Price = "219";
+										}
+						)
+					}
+				}
+
+			}
+			veg_pizza as "veg pizza"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Veg_Pizza
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Veg_Pizza == "Paneer pizza")
+										{
+											input.Price = "199";
+										}
+										else if(Veg_Pizza == "Vegetable puffs")
+										{
+											input.Price = "179";
+										}
+										else if(Veg_Pizza == "Cheese pizza")
+										{
+											input.Price = "149";
+										}
+										else if(Veg_Pizza == "Plain pizza")
+										{
+											input.Price = "99";
+										}
+						)
+					}
+				}
+
+			}
+			indian_non_veg as "indian non veg"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Indian_Non_veg
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Indian_Non_veg == "Chicken 65")
+										{
+											input.Price = "69";
+										}
+										else if(Indian_Non_veg == "Chicken Lollipop")
+										{
+											input.Price = "99";
+										}
+										else if(Indian_Non_veg == "Chilli chicken")
+										{
+											input.Price = "199";
+										}
+										else if(Indian_Non_veg == "Pepper chicken")
+										{
+											input.Price = "198";
+										}
+										else if(Indian_Non_veg == "Fish fry")
+										{
+											input.Price = "89";
+										}
+										else if(Indian_Non_veg == "Fish pakpoda")
+										{
+											input.Price = "49";
+										}
+										else if(Indian_Non_veg == "Prawn fry")
+										{
+											input.Price = "49";
+										}
+										else if(Indian_Non_veg == "Prawn pakoda")
+										{
+											input.Price = "79";
+										}
+										else if(Indian_Non_veg == "Crap lalipop")
+										{
+											input.Price = "199";
+										}
+						)
+					}
+				}
+
+			}
+			non_veg_puffs as "non veg puffs"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Puffs1
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Puffs1 == "Egg puffs")
+										{
+											input.Price = "29";
+										}
+										else if(Puffs1 == "Chicken puffs")
+										{
+											input.Price = "39";
+										}
+										else if(Puffs1 == "Fish puffs")
+										{
+											input.Price = "49";
+										}
+										else if(Puffs1 == "Mutton puffs")
+										{
+											input.Price = "89";
+										}
+						)
+					}
+				}
+
+			}
+			Non_veg_burger as "Non veg burger"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Burger
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Burger == "Egg burger")
+										{
+											input.Price = "19";
+										}
+										else if(Burger == "Chicken burger")
+										{
+											input.Price = "29";
+										}
+										else if(Burger == "Mutton burger")
+										{
+											input.Price = "59";
+										}
+										else if(Burger == "Chicken cheese burger")
+										{
+											input.Price = "89";
+										}
+										else if(Burger == "Crispy chicken burger")
+										{
+											input.Price = "49";
+										}
+										else
+										{
+											price = "0";
+										}
+						)
+					}
+				}
+
+			}
+			non_veg_pizza as "non veg pizza"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on user input of Pizza1
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											if(Pizza1 == "Egg pizza")
+										{
+											input.Price = "49";
+										}
+										else if(Pizza1 == "Chicken pizza")
+										{
+											input.Price = "99";
+										}
+										else if(Pizza1 == "Crispy chicken pizza")
+										{
+											input.Price = "99";
+										}
+										else if(Pizza1 == "Prawn pizza")
+										{
+											input.Price = "89";
+										}
+						)
+					}
+				}
+
+			}
+			Send_bill_in_mail as "Send bill in mail"
+			{
+				type =  form
+				form = Snacks_Form
+
+				record event = on add or edit
+
+				on success
+				{
+					actions 
+					{
+						custom deluge script
+						(
+											ticket_html = "";
+										ticket_html = ticket_html + "<html>";
+										ticket_html = ticket_html + "<head><meta charset='UTF-8'><title>Snacks invoice</title></head>";
+										ticket_html = ticket_html + "<body style='margin:0;padding:20px;background:#f4f6f8;font-family:Segoe UI,Arial;'>";
+										ticket_html = ticket_html + "<table width='100%' cellspacing='0' cellpadding='0'><tr><td align='center'>";
+										ticket_html = ticket_html + "<table width='600' style='background:#ffffff;border-radius:10px;padding:25px;'>";
+										ticket_html = ticket_html + "<tr><td style='text-align:center;border-bottom:2px dashed #ddd;padding-bottom:15px;'>";
+										ticket_html = ticket_html + "<h1 style='margin:0;color:#2c3e50;'>Welcome to ABC snacks</h1>";
+										ticket_html = ticket_html + "<p style='color:#777;font-size:14px;'>Thank you for choosing our service !</p>";
+										ticket_html = ticket_html + "<span style='background:#27ae60;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;'>PAID ✅</span>";
+										ticket_html = ticket_html + "</td></tr>";
+										ticket_html = ticket_html + "<tr><td>";
+										ticket_html = ticket_html + "<table width='100%' style='font-size:14px;margin-top:20px;'>";
+										ticket_html = ticket_html + "<tr><td style='padding:10px;color:#555;'>Customer Name</td><td style='padding:10px;'>" + input.Name + "</td></tr>";
+										ticket_html = ticket_html + "<tr><td style='padding:10px;color:#555;'>Mail</td><td style='padding:10px;'>" + input.Enter_your_email + "</td></tr>";
+										ticket_html = ticket_html + "<tr><td style='padding:10px;color:#555;'>phone</td><td style='padding:10px;'>" + input.Enter_your_phone_number + "</td></tr>";
+										ticket_html = ticket_html + "<tr><td style='padding:10px;color:#555;'>Snacks type</td><td style='padding:10px;'>" + input.Select_the_snacks_type + "</td></tr>";
+										ticket_html = ticket_html + "<tr><td style='padding:10px;color:#555;'>Price</td><td style='padding:10px;'>" + input.Price + "</td></tr>";
+										ticket_html = ticket_html + "<tr>" + "<td style='padding:10px;color:#555;'>QR code</td>" + "<td style='padding:10px;color:#27ae60;font-weight:bold;'>" + "<img src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + input.Price + "'style='width:120px;height:120px;'>" + "</td>" + "</tr>";
+										ticket_html = ticket_html + "</table>";
+										ticket_html = ticket_html + "</td></tr>";
+										ticket_html = ticket_html + "</table>";
+										ticket_html = ticket_html + "</td></tr></table>";
+										ticket_html = ticket_html + "</body></html>";
+										sendmail
+										[
+											from :"manikandan@zentegra.com"
+											to :input.Enter_your_email
+											cc:"manikandansjobzen@gmail.com"
+											reply to :"manikandan@zentegra.com"
+											subject :"Welcome to ABC snacks"
+											message :ticket_html
+										]
+						)
+					}
+				}
+
+			}
+		}
+
+
+
+
+
+
+	}
+	share_settings
+	{
+			"Read"
+			{
+				name = "Read"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have read permission for all components\n"
+			}
+			"Write"
+			{
+				name = "Write"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have write permission for all components\n"
+			}
+			"Developer"
+			{
+				name = "Developer"
+				type = Developer
+				permissions = {Chat:false, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "Developer Profile\n"
+			}
+			"Administrator"
+			{
+				name = "Administrator"
+				type = Users_Permissions
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This profile will have all the permissions.\n"
+			}
+			"Customer"
+			{
+				name = "Customer"
+				type = Customer_Portal
+				permissions = {Chat:true, Predefined:true, ApiAccess:true, PIIAccess:true, ePHIAccess:true}
+				description = "This is the default profile having only add and view permission.\n"
+			}
+			roles
+			{
+				"CEO"
+				{
+					description = "User belonging to this role can access data of all other users."
+				}
+			}
+	}
+
+
+	web
+	{
+		forms
+		{
+			form Snacks_Form
+			{
+				label placement = left
+			}
+			form Veg
+			{
+				label placement = left
+			}
+		}
+		reports
+		{
+			report All_Snacks
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+							fields
+							(
+								Select_the_snacks_type as "Select the snacks type"
+								Classic_Burger as "Classic Burger"
+								Cheese_based_veg_burgers as "Cheese based veg burgers "
+								Paneer_burgers as "Paneer burgers"
+								Spicy_Burgers as "Spicy Burgers"
+								French_burger as "French burger"
+								Indian_veg as "Indian veg "
+								Price
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+							fields
+							(
+								Select_the_snacks_type as "Select the snacks type"
+								Classic_Burger as "Classic Burger"
+								Cheese_based_veg_burgers as "Cheese based veg burgers "
+								Paneer_burgers as "Paneer burgers"
+								Spicy_Burgers as "Spicy Burgers"
+								French_burger as "French burger"
+								Indian_veg as "Indian veg "
+								Veg_Puffs as "Veg puffs"
+								Veg_Pizza as "Veg Pizza"
+								Indian_Non_veg as "Indian Non veg"
+								Puffs1 as "Puffs"
+								Burger
+								Pizza1 as "Pizza"
+								Name
+								Enter_your_email as "Enter your email"
+								Enter_your_phone_number as "Enter your phone number"
+								Price
+							)
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+			report All_Veges
+			{
+				quickview
+				(
+					layout
+					(
+		 				type = -1
+						datablock1
+						(
+							layout type = -1
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+						record
+						(
+							Edit   	   
+							Duplicate   	   
+							Delete   	   
+    					)
+    				)
+    				action
+    				(
+						on click
+						(
+							View Record   	   
+    					)
+						on right click
+						(
+							Edit   	   
+							Delete   	   
+							Duplicate   	   
+							View Record   	   
+    					)
+     				)
+				)
+
+				detailview
+				(
+					layout
+					(
+		 				type = 1
+						datablock1
+						(
+							layout type = -2
+						)
+					)
+					menu
+    				(
+    	 				header
+    	 				(
+    		 				Edit 
+    		 				Duplicate 
+    		 				Delete 
+    	 				)
+    				)
+				)
+			}
+		}
+		menu
+		{
+			space Space
+			{
+				displayname = "Space"
+				icon = "objects-spaceship"
+
+				section Snacks
+				{
+					displayname = "Snacks"
+					icon = "food-cookies"
+					form  Snacks_Form
+					{
+						icon = "design-2-form"
+					}
+					report All_Snacks
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section App_Preferences
+				{
+					displayname = "App Preferences"
+					icon = "design-app"
+					systemcomponent
+					{
+						type = localization
+						displayname = "Language Selection"
+						icon = "education-language"
+					}
+					systemcomponent
+					{
+						type = connection
+						displayname = "Integrations"
+						icon = "tech-2-connection"
+					}
+				}
+				section Approvals
+				{
+					displayname = "Approvals"
+					icon = "ui-2-hourglass"
+					systemcomponent
+					{
+						type = approval
+						approval status = pending
+						displayname = "Pending Tasks"
+						icon = "ui-2-hourglass"
+					}
+					systemcomponent
+					{
+						type = approval
+						approval status = completed
+						displayname = "Completed Tasks"
+						icon = "design-todo"
+					}
+				}
+				section SharedAnalytics_Section
+				{
+					type = shared_user_report_section
+					displayname = "Reports"
+					icon = "business-chart-bar-33"
+				}
+				section Veges
+				{
+					displayname = "Veges"
+					icon = "tech-desktop"
+					form  Veg
+					{
+						icon = "tech-desktop"
+					}
+					report All_Veges
+					{
+						icon = "tech-desktop"
+					}
+				}
+				section Front_view
+				{
+					displayname = "Front view"
+					icon = "tech-tv-old"
+					page Front_view
+					{
+						icon = "tech-tv-old"
+					}
+				}
+			}
+			preference
+			{
+				icon
+				{
+					style = outline
+				}
+			}
+		}
+		customize
+		{
+			font = "lato"
+			color options
+			{
+				color = "11"
+			}
+			logo
+			{
+				preference = "app_icon"
+				placement = "left"
+			}
+		}
+	}
+	phone
+	{
+		forms
+		{
+			form Snacks_Form
+			{
+				label placement = auto
+			}
+			form Veg
+			{
+				label placement = auto
+			}
+		}
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "3"
+			color options
+			{
+				color = turquoise
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	tablet
+	{
+		forms
+		{
+			form Snacks_Form
+			{
+				label placement = auto
+			}
+			form Veg
+			{
+				label placement = auto
+			}
+		}
+		customize
+		{
+			layout = slidingpane
+			font = "default"
+			style = "3"
+			color options
+			{
+				color = turquoise
+			}
+			logo
+			{
+				preference = "none"
+			}
+		}
+	}
+	translation
+{
+{"Language_Settings":{"LANGAGUE_WITH_LOGIN":"browser"}}
+}
+}
